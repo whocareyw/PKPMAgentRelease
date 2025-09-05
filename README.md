@@ -49,6 +49,25 @@ PKPM 结构设计智能体是一款基于大语言模型的设计辅助工具。
 
 **注意** 关闭工具组后，Agent就会丧失响应的能力，如果发现模型未能完成任务，可以确认工具组是否已开启。
 
+### 3.2 二次开发
+
+**我们支持用户自定义工具供大模型调用，编写完成后，将会展示在 工具管理-> 用户自定义 页面下**
+
+<img src="HelpImage/二次开发文件路径.png" alt="" width="800">
+
+打开 UserDefineTool.py，编写MCP工具，示例代码如下：
+```python
+from PKPMMCP.Base import *
+__Tag = ToolAnnotations(title = "用户自定义") 
+
+#示例代码
+@mcp.tool(annotations=__Tag)
+def add(a, b) -> bool:
+    """ 加法运算器 """   
+    return a + b
+```
+
+
 ## 4. 案例
 ### 4.1 建模
 - 提示词：**在选中的柱子顶部连接上主梁，xy 两个方向都形成框架**
