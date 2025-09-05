@@ -20,7 +20,7 @@ PKPM 结构设计智能体是一款基于大语言模型的设计辅助工具。
 ### 2.2 启动位置
 打开 PKPM 软件，在轴网菜单栏中点击 **⌈PKPM Agent 尝鲜版⌋**，即可打开Agent对话框，支持页面缩放。
 
-<img src="HelpImage/启动.png" alt="工具启动界面" width="600">
+<img src="HelpImage/启动.png" alt="工具启动界面" width="800">
 
 ### 2.3 大模型设置
 - 在 Agent 面板中点击 "管理" 按钮，从下拉菜单中选择要使用模型：
