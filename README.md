@@ -1,6 +1,6 @@
 # PKPM Agent 用户手册
 
-[💬 吐槽专区](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R)
+[**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R)
 
 ## 1. 基本信息
 PKPM 结构设计智能体是一款基于大语言模型的设计辅助工具。通过自然语言交互的方式，可以实现：
