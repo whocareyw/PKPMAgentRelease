@@ -90,6 +90,15 @@ def add(a, b) -> bool:
     """ 加法运算器 """   
     return a + b
 ```
+**二次开发环境配置流程如下：**
+- 开启 VSCode 打开 PKPM2026RXXX > Ribbon > PythonEnv 文件夹
+- 选择PKPM python 环境作为 VSCode 的解释器
+<img src="HelpImage/选解释器.png" alt="" width="800">
+<img src="HelpImage/选解释器2.png" alt="" width="800">
+- 可以使用 Base.py 文件提供的基础类和工具
+<img src="HelpImage/Base文件.png" alt="" width="800">
+- 开启 UserDefineTool.py，编写自己的MCP工具，可以直接使用 PKPM 的 Python API
+<img src="HelpImage/UserDefine文件.png" alt="" width="800">
 
 
 ## 4. 案例
