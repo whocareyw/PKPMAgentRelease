@@ -108,7 +108,7 @@
 <div align="center">
 <table>
 <tr>
-<td><img src="HelpImage/快捷指令.png" alt="快捷指令" width="400"></td>
+<td><img src="HelpImage/收藏.png" alt="快捷指令" width="400"></td>
 <td><img src="HelpImage/快捷指令到了脚本执行器.png" alt="快捷指令" width="400"></td>
 </tr>
 </table>
