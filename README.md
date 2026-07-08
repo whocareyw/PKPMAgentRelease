@@ -241,6 +241,9 @@
 
 **我们支持用户自定义工具供大模型调用，编写完成后，将会展示在 工具管理-> 用户自定义 页面下**
 
+支持在Python快捷指令中调用用户自定义的工具，无需import
+
+
 <img src="HelpImage/二次开发文件路径.png" alt="" width="800">
 
 打开 UserDefineTool.py，编写MCP工具，示例代码如下：
