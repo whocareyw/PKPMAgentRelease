@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[**⬇️ 立即下载 PKPM Agent 2.1.0**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.0.exe) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R)
+[**⬇️ 立即下载 PKPM Agent 2.1.1**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.1.exe) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R)
 
 </div>
 
