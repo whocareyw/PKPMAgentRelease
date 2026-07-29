@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[**⬇️ 立即下载 PKPM Agent 2.1.1**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.1.exe) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R)
+[**⬇️ 立即下载 PKPM Agent 2.1.1**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.1.exe) &nbsp;·&nbsp; [**📋 更新说明**](CHANGELOG.md) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R) &nbsp;·&nbsp; [**💬 加入交流群**](#交流群)
 
 </div>
 
@@ -21,7 +21,7 @@
 通过自然语言交互，PKPM Agent 可以：
 
 - 🏗️ **深度操控 PKPM**：结构建模、荷载布置、计算分析、结果提取
-- 🧮 **多软件协同**：实时操控 SAP2000、ETABS、Rhino、AutoCAD
+- 🧮 **多软件协同**：实时操控 SAP2000、ETABS、STAAD.Pro、Rhino、AutoCAD
 - 📄 **文档全流程自动化**：一键生成 Word / Excel / PPT，处理与转换 PDF
 - 🐍 **Python 收藏复用**：常用操作可保存为可复用的自定义指令
 
@@ -42,7 +42,7 @@
 
 1. **大模型服务**：由构力科技统一提供模型服务，内置接入 **GLM、Kimi、Qwen 等主流旗舰大模型**，开箱即用、无需自行配置 API Key，可根据任务需要自由切换。
 2. **SKILL 技能系统**：内置结构设计领域专业知识库，封装建模、计算、绘图、文档生成等完整操作规范，实现"渐进式披露"的智能任务匹配。
-3. **MCP 模型上下文协议**：标准化通信协议层，将各工程软件的 API 统一映射为 Python 可调用接口，打通 Agent 与专业软件之间的数据壁垒。
+3. **MCP 模型上下文协议**：标准化通信协议层，将各工程软件的 API 统一映射为 Python 可调用接口，打通 Agent 与专业软件之间的数据壁垒。通过 **MCP 服务配置页**，还可自行接入更多外部工具。
 
 <div align="center">
 <img src="HelpImage/07_图1-3_Skills技能系统.png" alt="Skills 技能系统" width="800">
@@ -61,7 +61,7 @@
 
 ### 3.1 环境要求
 
-- 💻 **按需安装对应软件**：PKPM 2027R1.0-64 及以上、AutoCAD 2018 及以上、SAP2000 / ETABS / Rhino（使用对应功能时需安装并可正常启动）。
+- 💻 **按需安装对应软件**：PKPM 2027R1.0-64 及以上、AutoCAD 2018 及以上、SAP2000 / ETABS / STAAD.Pro / Rhino（使用对应功能时需安装并可正常启动）。
 - 🌐 **需连接网络**（用于大模型调用）。
 
 ### 3.2 登录
@@ -110,12 +110,15 @@
 | `pkpm_link` | 连接 PKPM，完成建模、荷载布置、楼层组装、计算与结果提取 |
 | `sap2000_link` | 操控 SAP2000 进行建模、分析与结果提取 |
 | `etabs_link` | 操控 ETABS 进行建模、分析与结果提取 |
+| `staad_link` | 操控 STAAD.Pro 进行建模、计算与结果读取 |
 | `rhino_link` | 操控 Rhino 完成建模、绘图、曲面、网格等 3D 建模任务 |
 | `autocad_link` | 操控 AutoCAD 完成绘图、改图、图纸信息提取 |
 | `word_link` / `excel_link` / `ppt_link` | 操作 Word / Excel / PPT 完成文档创建、编辑与套用模板 |
 | `pdf_link` | 处理 PDF 文件的合并、提取、归档与转换 |
 
 > **⚠️ 注意**：关闭某个技能后，Agent 将丧失相应能力。只启用必要的技能可提高效率与准确性，并**大幅降低 Token 消耗**。
+
+除内置技能外，还支持**自定义技能**：把常用的工作流程沉淀为技能，重复使用。在对话框输入「/」即可快速选用技能。
 
 <div align="center">
 <img src="HelpImage/skills界面.png" alt="Skills 技能管理" width="800">
@@ -157,7 +160,15 @@
 - **分析与结果**：自动运行计算、检查模型完整性；提取内力、位移、层间位移角、模态、反力、应力及设计结果。
 - **数据联动**：将模型数据或结果导出到 Excel / Word / PPT，自动生成分析报告或对比表格。
 
-### 5.4 操控 Rhino
+### 5.4 操控 STAAD.Pro
+
+通过 `staad_link` 技能，可让智能体直接在 STAAD.Pro 中完成结构建模、计算分析并读取结果：
+
+- **结构建模**：创建节点、杆件、板单元；定义截面属性与材料；布置支座约束。
+- **荷载与参数**：施加恒载、活载、风载等荷载；定义荷载工况与组合；设置地震参数。
+- **计算与结果**：自动执行分析计算，提取节点位移、构件内力、支座反力等结果。
+
+### 5.5 操控 Rhino
 
 通过 `rhino_link` 技能，使用 Python COM 接口操控 Rhino（犀牛）：
 
@@ -171,7 +182,7 @@
 <img src="HelpImage/14_图2-5_网架部分多软件流转.png" alt="网架部分多软件流转" width="800">
 </div>
 
-### 5.5 操控 AutoCAD
+### 5.6 操控 AutoCAD
 
 通过 `autocad_link` 技能，使用 Python COM 接口操控 AutoCAD：
 
@@ -186,7 +197,7 @@
 <img src="HelpImage/15_图2-6_PKPM_Agent操控CAD画图.png" alt="PKPM Agent 操控 CAD 画图" width="800">
 </div>
 
-### 5.6 文档与报告（Word / Excel / PPT / PDF）
+### 5.7 文档与报告（Word / Excel / PPT / PDF）
 
 深度集成 Microsoft Office、WPS Office 及 PDF 处理工具：
 
@@ -221,6 +232,7 @@
 
 - **意图识别增强**：即使表述不够精确或包含口语化表达，也能准确匹配专业功能（例如"改一下梁"可结合上下文推断为截面调整或配筋修改）。
 - **对话式工作流**：遵循"连接 → 检索 → 执行"三步模式，降低学习成本。
+- **关键步骤主动确认**：智能体在执行关键步骤时会主动向你确认，减少理解偏差和返工。
 - **智能连接管理**：执行任务时自动建立 MCP 连接、断开后自动重连；长时间计算导致软件重启后，Agent 自动恢复连接并反馈结果。
 
 ### 6.3 权限控制
@@ -266,3 +278,13 @@ def add(a, b) -> bool:
 <img src="HelpImage/Base文件.png" alt="" width="800">
 - 开启 UserDefineTool.py，编写自己的MCP工具，可以直接使用 PKPM 的 Python API
 <img src="HelpImage/UserDefine文件.png" alt="" width="800">
+
+<a id="交流群"></a>
+
+## 8. 加入交流群
+
+扫码加入 **PKPM Agent 工程设计智能体** 用户交流群，反馈问题、分享经验、获取最新动态：
+
+<div align="center">
+<img src="HelpImage/20260729-175046.png" alt="PKPM Agent 交流群二维码" width="360">
+</div>
