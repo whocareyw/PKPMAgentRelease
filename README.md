@@ -286,5 +286,5 @@ def add(a, b) -> bool:
 扫码加入 **PKPM Agent 工程设计智能体** 用户交流群，反馈问题、分享经验、获取最新动态：
 
 <div align="center">
-<img src="HelpImage/20260729-175046.png" alt="PKPM Agent 交流群二维码" width="360">
+<img src="HelpImage/交流群二维码.png" alt="PKPM Agent 交流群二维码" width="360">
 </div>
