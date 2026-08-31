@@ -2,39 +2,44 @@
 
 # PKPM Agent 用户手册
 
-**新一代建筑结构设计智能体软件 · V2.0**
+**工程设计智能体 · V2.1**
 
 </div>
 
 <div align="center">
 
-[**⬇️ 立即下载 PKPM Agent 2.1.1**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.1.exe) &nbsp;·&nbsp; [**📋 更新说明**](CHANGELOG.md) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R) &nbsp;·&nbsp; [**💬 加入交流群**](#交流群)
+[**⬇️ 立即下载 PKPM Agent 2.1.3**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.1.3.exe) &nbsp;·&nbsp; [**📋 更新说明**](CHANGELOG.md) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R) &nbsp;·&nbsp; [**💬 加入交流群**](#交流群)
 
 </div>
 
 ## 1. 产品简介
 
-**✨ PKPM Agent 设计智能体**
-
-是一款基于大语言模型的新一代建筑结构设计智能体软件。本版本依托前沿 AI 大模型技术完成全方位迭代，完成从"工具辅助"到"专属智能设计伙伴"的跨越式升级。
+**✨ PKPM Agent 工程设计智能体**
 
 通过自然语言交互，PKPM Agent 可以：
 
 - 🏗️ **深度操控 PKPM**：结构建模、荷载布置、计算分析、结果提取
 - 🧮 **多软件协同**：实时操控 SAP2000、ETABS、STAAD.Pro、Rhino、AutoCAD
 - 📄 **文档全流程自动化**：一键生成 Word / Excel / PPT，处理与转换 PDF
-- 🐍 **Python 收藏复用**：常用操作可保存为可复用的自定义指令
+- 🧩 **插件 & 脚本复用**：常用对话和脚本可保存为带参数表单的可复用插件，一次配置、多次使用
 
-**🚀 V2.0 核心升级**
+**🚀 V2.1 核心升级**
 
 - **独立客户端**：升级为独立桌面应用，**无需依托 PKPM 主程序**，可单独安装部署。
 - **双登录体系**：支持个人注册与企业统一账号两种登录方式。
 - **MCP 并行互联**：多款工程软件并行连接，打通数据壁垒。
-- 原生 PKPM 功能全面强化，新增 **ETABS / SAP2000 / Rhino** 深度操控。
+- 原生 PKPM 功能全面强化，新增 **ETABS / SAP2000 / Rhino / STAAD.Pro** 深度操控。
 - **AutoCAD 协同全面升级**：自动绘图、智能改图、图纸信息提取、结果回注。
 - **Office 全流程自动化**：Word / Excel / PPT 一键生成。
 - **PDF 处理能力**：正式报告合并、提取、归档及矢量 PDF 转换 CAD。
 - **分级安全权限管控**：全新三级安全机制。
+- **插件系统**：任意一次成功的对话可一键「制作成插件」，生成带参数表单的界面，填入参数即可重复执行；插件脚本还可一键交给 Agent 修改或修复。
+- **会话按工作空间分组**：左侧会话按工作空间自动分组，工作空间支持改名，多个项目井井有条。
+- **对话分支**：支持从任意一条消息「从此处创建新聊天」，分支出新会话，互不干扰。
+- **自定义第三方模型**：除内置模型外，可接入自有 API Key 的第三方模型（Kimi、DeepSeek 等），支持按量计费与 Coding Plan。
+- **上下文用量指示 + 智能压缩**：实时查看上下文占用，长会话自动智能压缩，长任务不再轻易达到上限。
+- **多会话并行**：最多可同时运行三个会话，多任务并行互不等待；任务在后台完成或出错时收到系统通知，点击即可跳回对应会话。
+- **体验提速**：启动明显提速；文件上传支持直接拖入整个文件夹。
 
 ## 2. 核心架构
 
@@ -44,8 +49,11 @@
 2. **SKILL 技能系统**：内置结构设计领域专业知识库，封装建模、计算、绘图、文档生成等完整操作规范，实现"渐进式披露"的智能任务匹配。
 3. **MCP 模型上下文协议**：标准化通信协议层，将各工程软件的 API 统一映射为 Python 可调用接口，打通 Agent 与专业软件之间的数据壁垒。通过 **MCP 服务配置页**，还可自行接入更多外部工具。
 
+除内置模型外，还支持在模型选择菜单中点击「+」**添加自定义第三方模型**：选择服务商、填写模型 ID 与 API 地址 / 密钥，检测连接通过后即可启用，支持按量计费与 Coding Plan 两种接入方式。
+
 <div align="center">
-<img src="HelpImage/07_图1-3_Skills技能系统.png" alt="Skills 技能系统" width="800">
+<img src="HelpImage/图2-1_添加自定义第三方模型.png" alt="添加自定义第三方模型" width="800">
+<img src="HelpImage/图2-2_添加自定义第三方模型配置页面.png" alt="自定义第三方模型配置页面" width="800">
 </div>
 
 **自研 Agent 框架（harness-engineering）**
@@ -73,24 +81,31 @@
 - **邀请码**：在登录时填写邀请码可获取额外赠送额度（选填）。
 
 <div align="center">
-<img src="HelpImage/登录界面.png" alt="登录界面" width="800">
+<img src="HelpImage/图3-1_登录界面.png" alt="登录界面" width="800">
 </div>
 
 ### 3.3 主界面
 
-登录后进入主界面。左侧为 **新建任务 / python 快捷指令 / skills 技能 / 历史会话** 导航栏，中间为对话输入区，可直接把文件拖入对话框，`Shift + Enter` 换行。
+登录后进入主界面。左侧为 **新建任务 / 插件 & 脚本 / Skills & MCP** 导航栏，下方为**按工作空间分组的历史会话**与最近会话；中间为对话输入区，可直接把文件（或整个文件夹）拖入对话框，`Shift + Enter` 换行。
 
 对话框下方可以：
 
-- 切换 **大模型**（如 glm-5.2）；
+- 切换 **大模型**（如 glm-5.3-flash），模型列表中会标注各模型的 **Token 消耗速度倍率**与支持的模态（文本 / 视觉等）；
 - 选择 **Skills 技能**；
 - 切换 **权限模式**（Ask / Auto / Full）；
-- 新建 **Workspace** 工作区。
+- 选择会话所属的 **工作空间**。
 
 下方还提供 CAD / Rhino / Office / PDF / PKPM / Sap2000 等常用能力快捷入口。
 
 <div align="center">
-<img src="HelpImage/登陆后主界面.png" alt="登录后主界面" width="800">
+<img src="HelpImage/图3-2_登录后主界面.png" alt="登录后主界面" width="800">
+<img src="HelpImage/图3-3_模型Token消耗速度与支持的模态.png" alt="模型列表展示 Token 消耗速度与支持的模态" width="800">
+</div>
+
+历史会话**按工作空间分组**展示，右键工作空间可 **新建任务 / 打开文件夹 / 重命名 / 删除**，多个项目并行管理互不干扰：
+
+<div align="center">
+<img src="HelpImage/图3-4_会话按工作空间分组.png" alt="会话按工作空间分组" width="800">
 </div>
 
 ### 3.4 账号与设置
@@ -98,12 +113,12 @@
 点击左下角用户头像，可打开 **余额 & 邀请码、产品说明、检查更新、授权验证、切换企业版、退出登录** 等菜单项。
 
 <div align="center">
-<img src="HelpImage/设置界面.png" alt="设置菜单" width="260">
+<img src="HelpImage/图3-5_设置界面.png" alt="设置菜单" width="260">
 </div>
 
 ## 4. Skills 技能系统
 
-**将经验、方法转化为 skills，相似任务轻松复用。** 系统内置多套专业技能，覆盖各软件操控与文档处理能力。点击左侧 **skills 技能**，可查看并管理所有技能。
+**将经验、方法转化为 skills，相似任务轻松复用。** 系统内置多套专业技能，覆盖各软件操控与文档处理能力。点击左侧 **Skills & MCP**，可查看并管理所有技能。
 
 | 技能 | 能力 |
 | --- | --- |
@@ -115,13 +130,15 @@
 | `autocad_link` | 操控 AutoCAD 完成绘图、改图、图纸信息提取 |
 | `word_link` / `excel_link` / `ppt_link` | 操作 Word / Excel / PPT 完成文档创建、编辑与套用模板 |
 | `pdf_link` | 处理 PDF 文件的合并、提取、归档与转换 |
+| `plants_link` | 连接 PlantS（BIMBase），完成工厂结构模型的梁、柱、支撑等构件操作 |
 
 > **⚠️ 注意**：关闭某个技能后，Agent 将丧失相应能力。只启用必要的技能可提高效率与准确性，并**大幅降低 Token 消耗**。
 
-除内置技能外，还支持**自定义技能**：把常用的工作流程沉淀为技能，重复使用。在对话框输入「/」即可快速选用技能。
+除内置技能外，还支持**自定义技能**：把常用的工作流程沉淀为技能，重复使用。点击左侧 **Skills & MCP** 可查看并管理所有技能，也可点击 **添加 Skills** 接入第三方技能；在对话框输入「/」即可快速选用技能。
 
 <div align="center">
-<img src="HelpImage/skills界面.png" alt="Skills 技能管理" width="800">
+<img src="HelpImage/图4-1_Skills技能管理界面.png" alt="Skills 技能管理" width="800">
+<img src="HelpImage/图4-2_输入斜杠选择技能.png" alt="输入 / 快速选择技能" width="800">
 </div>
 
 ## 5. 主要功能
@@ -134,8 +151,8 @@
 - **计算分析与结果提取**：自动调用 SATWE 计算；提取内力、位移、配筋、应力、周期、振型等结果；读取构件验算结果（轴压比、剪压比、层间位移角等）与计算书文本。
 
 <div align="center">
-<img src="HelpImage/10_图2-1_操控PKPM建模.png" alt="操控 PKPM 建模" width="800">
-<img src="HelpImage/11_图2-2_操控PKPM计算.png" alt="操控 PKPM 计算" width="800">
+<img src="HelpImage/图5-1_操控PKPM建模.png" alt="操控 PKPM 建模" width="800">
+<img src="HelpImage/图5-2_操控PKPM计算.png" alt="操控 PKPM 计算" width="800">
 </div>
 
 ### 5.2 操控 SAP2000
@@ -148,7 +165,7 @@
 - **典型用途**：处理空间桁架、大跨结构、桥梁等复杂空间结构的补充分析。
 
 <div align="center">
-<img src="HelpImage/12_图2-3_操控SAP2000.png" alt="操控 SAP2000" width="800">
+<img src="HelpImage/图5-3_操控SAP2000.png" alt="操控 SAP2000" width="800">
 </div>
 
 ### 5.3 操控 ETABS
@@ -178,8 +195,8 @@
 - **联动应用**：将复杂曲面数据导出供 ETABS / SAP2000 / PKPM 分析，或基于结果生成优化后的建筑形体。
 
 <div align="center">
-<img src="HelpImage/13_图2-4_操控Rhino.png" alt="操控 Rhino" width="800">
-<img src="HelpImage/14_图2-5_网架部分多软件流转.png" alt="网架部分多软件流转" width="800">
+<img src="HelpImage/图5-4_操控Rhino.png" alt="操控 Rhino" width="800">
+<img src="HelpImage/图5-5_网架部分多软件流转.png" alt="网架部分多软件流转" width="800">
 </div>
 
 ### 5.6 操控 AutoCAD
@@ -194,7 +211,7 @@
 > **使用前提**：已安装 AutoCAD（建议 2018 及以上版本），可正常启动，图纸文件未加密或写保护。
 
 <div align="center">
-<img src="HelpImage/15_图2-6_PKPM_Agent操控CAD画图.png" alt="PKPM Agent 操控 CAD 画图" width="800">
+<img src="HelpImage/图5-6_PKPM_Agent操控CAD画图.png" alt="PKPM Agent 操控 CAD 画图" width="800">
 </div>
 
 ### 5.7 文档与报告（Word / Excel / PPT / PDF）
@@ -209,23 +226,26 @@
 支持字体、字号、页边距、表格样式等格式参数的详细指定，满足企业标准化文档输出需求。
 
 <div align="center">
-<img src="HelpImage/16_图2-7_生成EXCEL.png" alt="生成 Excel" width="800">
-<img src="HelpImage/17_图2-8_生成WORD.png" alt="生成 Word" width="800">
-<img src="HelpImage/18_图2-9_生成PPT.png" alt="生成 PPT" width="800">
+<img src="HelpImage/图5-7_生成EXCEL.png" alt="生成 Excel" width="800">
+<img src="HelpImage/图5-8_生成WORD.png" alt="生成 Word" width="800">
+<img src="HelpImage/图5-9_生成PPT.png" alt="生成 PPT" width="800">
 </div>
 
 ## 6. 其他功能
 
-### 6.1 Python 收藏系统
+### 6.1 插件 & 脚本系统
 
-- 自动记录执行过程中生成的 Python 脚本。
-- 支持将常用操作保存为可命名、可描述的自定义指令。
-- 支持参数化标记，执行时可修改参数，实现"一键复用 / 修改"。
+一次成功的任务，下次不必重来。任意一条消息下方都可点击 **插件 & 脚本**，将本次任务 **制作成插件** 或 **保存到脚本**：
+
+- **插件**：自动把任务提炼为带**参数表单**的界面——跨度、截面、材料等参数留空可填，以后填入参数点击 **RUN** 即可一键执行，一次配置、多次使用；还支持「恢复默认参数」。
+- **脚本**：执行过程中生成的 Python 脚本自动收藏，可随时查看、编辑、运行。
+- **Agent 协同**：插件与脚本既可从对话中收藏，也可由 Agent 直接创建；点击 **「让 Agent 修改」** 可把脚本连同运行结果一键交给 Agent 修改或修复。
 - 适用于重复性模型检查、标准化建模流程、批量处理等场景。
 
 <div align="center">
-<img src="HelpImage/19_图3-1_快捷收藏.png" alt="快捷收藏" width="800">
-<img src="HelpImage/20_图3-2_执行过程收藏为Python脚本.png" alt="执行过程收藏为 Python 脚本" width="800">
+<img src="HelpImage/图6-1_把某次任务保存成脚本或制作插件.png" alt="把某次任务保存成脚本或制作插件" width="800">
+<img src="HelpImage/图6-2_插件可以填入参数一键执行.gif" alt="插件填入参数一键执行" width="800">
+<img src="HelpImage/图6-3_脚本可收藏自对话也可由Agent创建修改.png" alt="脚本可收藏自对话，也可由 Agent 创建修改" width="800">
 </div>
 
 ### 6.2 交互体验优化
@@ -233,7 +253,15 @@
 - **意图识别增强**：即使表述不够精确或包含口语化表达，也能准确匹配专业功能（例如"改一下梁"可结合上下文推断为截面调整或配筋修改）。
 - **对话式工作流**：遵循"连接 → 检索 → 执行"三步模式，降低学习成本。
 - **关键步骤主动确认**：智能体在执行关键步骤时会主动向你确认，减少理解偏差和返工。
+- **对话分支**：任意一条消息旁点击「从此处创建新聊天」，即可从该节点分支出新会话，尝试不同思路互不干扰。
+- **上下文用量指示**：实时显示上下文占用（对话消息 / 系统工具 / 提示词分类统计），长会话自动**智能压缩**，长任务对话不再轻易达到上限。
+- **多会话并行 + 后台通知**：最多可同时运行三个会话；任务在后台完成或出错时会收到系统通知，点击通知直接跳回对应会话。
 - **智能连接管理**：执行任务时自动建立 MCP 连接、断开后自动重连；长时间计算导致软件重启后，Agent 自动恢复连接并反馈结果。
+
+<div align="center">
+<img src="HelpImage/图6-4_从某个对话中间新建聊天.png" alt="从某个对话中间新建聊天" width="800">
+<img src="HelpImage/图6-5_查看上下文占用.png" alt="查看上下文占用" width="800">
+</div>
 
 ### 6.3 权限控制
 
@@ -246,17 +274,17 @@
 > 无论处于何种权限模式，系统底层安全红线始终强制生效，从根本上杜绝文件误删、系统篡改及越权操作等风险。
 
 <div align="center">
-<img src="HelpImage/22_图3-4_权限控制.png" alt="权限控制" width="800">
+<img src="HelpImage/图6-6_权限控制.png" alt="权限控制" width="800">
 </div>
 
 ## 7. 二次开发
 
 **我们支持用户自定义工具供大模型调用，编写完成后，将会展示在 工具管理-> 用户自定义 页面下**
 
-支持在Python快捷指令中调用用户自定义的工具，无需import
+支持在「插件 & 脚本」中调用用户自定义的工具，无需import
 
 
-<img src="HelpImage/二次开发文件路径.png" alt="" width="800">
+<img src="HelpImage/图7-1_二次开发文件路径.png" alt="" width="800">
 
 打开 UserDefineTool.py，编写MCP工具，示例代码如下：
 ```python
@@ -272,12 +300,12 @@ def add(a, b) -> bool:
 **二次开发环境配置流程如下：**
 - 开启 VSCode 打开 PKPM2027RXXX > Ribbon > PythonEnv 文件夹
 - 选择PKPM python 环境作为 VSCode 的解释器
-<img src="HelpImage/选解释器.png" alt="" width="800">
-<img src="HelpImage/选解释器2.png" alt="" width="800">
+<img src="HelpImage/图7-2_选解释器.png" alt="" width="800">
+<img src="HelpImage/图7-3_选解释器2.png" alt="" width="800">
 - 可以使用 Base.py 文件提供的基础类和工具
-<img src="HelpImage/Base文件.png" alt="" width="800">
+<img src="HelpImage/图7-4_Base文件.png" alt="" width="800">
 - 开启 UserDefineTool.py，编写自己的MCP工具，可以直接使用 PKPM 的 Python API
-<img src="HelpImage/UserDefine文件.png" alt="" width="800">
+<img src="HelpImage/图7-5_UserDefine文件.png" alt="" width="800">
 
 <a id="交流群"></a>
 
@@ -286,5 +314,5 @@ def add(a, b) -> bool:
 扫码加入 **PKPM Agent 工程设计智能体** 用户交流群，反馈问题、分享经验、获取最新动态：
 
 <div align="center">
-<img src="HelpImage/交流群二维码.png" alt="PKPM Agent 交流群二维码" width="360">
+<img src="HelpImage/图8-1_交流群二维码.png" alt="PKPM Agent 交流群二维码" width="360">
 </div>
