@@ -329,6 +329,7 @@ PKPM Agent 将资料查阅、专业软件操作和成果整理串联在同一段
 | --- | --- | --- |
 | 建筑设计 | `AutoCAD-Link` | 操控 AutoCAD、浩辰 CAD、中望 CAD 完成绘图、改图、图纸信息提取 |
 | 建筑设计 | `Rhino-Link` | 操控 Rhino 完成建模、绘图、曲面、网格等 3D 建模任务 |
+| 建筑设计 | `SketchUp-Link` | 在 SketchUp（草图大师）中按图建模、改模，统计面积和门窗数量，设置剖切与日照阴影并导出截图。[使用示例](#sketchup) |
 | 建筑设计 | `bimbase-parametric-component` | 用 pyp3d 编写 BIMBase 参数化建模脚本，并在 BIMBase 中执行 |
 | 建筑设计 | `GBP-Link` | 连接 PKPM 绿色低碳系列软件，完成建模、节能、风环境、采光、碳排放等计算 |
 | 结构设计 | `PKPM-Link` | 连接 PKPM，完成建模、荷载布置、楼层组装、计算与结果提取 |
@@ -705,7 +706,7 @@ PKPM Agent 将资料查阅、专业软件操作和成果整理串联在同一段
 
 ### 6.16 操控 SketchUp（草图大师）
 
-首次在对话中要求使用 SketchUp 时，PKPM Agent 会自动安装连接插件。如果 SketchUp 已经打开，按提示重启一次 SketchUp，再继续建模。
+在对话中提出 SketchUp 建模需求，即可使用 `SketchUp-Link` 技能。首次使用时，PKPM Agent 会自动安装连接插件。如果 SketchUp 已经打开，按提示重启一次 SketchUp，再继续建模。
 
 可以让 Agent 新建或修改模型，也可提供 CAD 图纸或平面图，搭建建筑体块、墙体、门窗与幕墙，布置室内空间。建模后可统计面积与门窗数量，设置场景、剖切、日照阴影或视角，并导出模型截图。
 
