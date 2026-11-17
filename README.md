@@ -8,11 +8,13 @@
 
 <div align="center">
 
-[**⬇️ 立即下载 PKPM Agent 2.5.7**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.5.7.exe) &nbsp;·&nbsp; [**🚀 本版亮点**](#本版亮点) &nbsp;·&nbsp; [**📋 历史更新说明**](CHANGELOG.md) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R) &nbsp;·&nbsp; [**💬 加入交流群**](#交流群)
+[**⬇️ 立即下载 PKPM Agent 2.5.7**](https://update.pkpm.cn/PKPM2010/Soft/Agent/PKPMAgent_Setup_2.5.7.exe) &nbsp;·&nbsp; [**🚀 本版亮点**](#本版亮点) &nbsp;·&nbsp; [**🏆 优秀作品巡礼**](参赛作品汇总.md) &nbsp;·&nbsp; [**📋 历史更新说明**](CHANGELOG.md) &nbsp;·&nbsp; [**😊许愿池 & ☹️点我吐槽**](https://gitee.com/pkpmgh/PKPMAgentRelease/issues/ICWL5R) &nbsp;·&nbsp; [**💬 加入交流群**](#交流群)
 
 已安装 PKPM Agent 的用户可在软件中点击「检查更新」升级。
 
 </div>
+
+> 🏆 **看看一线工程师怎么用**：[**PKPM Agent 工程 AI 创新大赛优秀作品巡礼（76 件实战案例与学习清单）**](参赛作品汇总.md) 已收录识图建模、跨软件仿真、专项验算、图纸校审、绿色低碳等 9 大工程场景案例，欢迎查阅学习。
 
 ---
 
